@@ -27,7 +27,9 @@ const todosReducer = (state = initialState, action) => {
         nextState[action.todo.id] = action.todo; // assigns a key of the tea's id to the value of the entire tea
       return nextState;
       case RECEIVE_TODOS:
-           nextState[action.todos] = action.todos; // assigns a key of the tea's id to the value of the entire tea
+          for (let i = 0; i < action.todos.length; i++){
+            nextState[action.todos[i].id] = action.todos[i];
+          }
       return nextState;
     default:
       return state;
@@ -35,3 +37,22 @@ const todosReducer = (state = initialState, action) => {
 };
 
 export default todosReducer;
+
+// const newTodos = [
+//     {
+//     id: 3,
+//     title: "make soup",
+//     body: "with tomatoes",
+//     done: false
+//   },
+//   {
+//     id: 4,
+//     title: "walk dog",
+//     body: "with icecream",
+//     done: true
+//   }];
+// store.getState(); 
+// store.dispatch(receiveTodo({ id: 3, title: "New Todo" }));
+// store.getState();
+// store.dispatch(receiveTodos(newTodos));
+// store.getState();
