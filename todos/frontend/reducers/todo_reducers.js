@@ -24,7 +24,7 @@ const todosReducer = (state = initialState, action) => {
     let nextState = Object.assign({}, state); //make a copy of the original state
   switch (action.type) {
       case RECEIVE_TODO:
-        nextState[action.todo.id] = action.todo; // assigns a key of the tea's id to the value of the entire tea
+        nextState[action.todo.id] = action.todo;
         return nextState;
       case RECEIVE_TODOS:
           for (let i = 0; i < action.todos.length; i++){
