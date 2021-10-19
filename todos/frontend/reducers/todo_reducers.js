@@ -1,7 +1,7 @@
 //Redux reducers manage the shape of your application state. 
 //returns the next state tree, given the current state tree and an action to handle
 
-import { RECEIVE_TODO, RECEIVE_TODOS } from "../actions/todo_actions";
+import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from "../actions/todo_actions";
 
 
 const initialState = {
@@ -25,16 +25,20 @@ const todosReducer = (state = initialState, action) => {
   switch (action.type) {
       case RECEIVE_TODO:
         nextState[action.todo.id] = action.todo; // assigns a key of the tea's id to the value of the entire tea
-      return nextState;
+        return nextState;
       case RECEIVE_TODOS:
           for (let i = 0; i < action.todos.length; i++){
             nextState[action.todos[i].id] = action.todos[i];
           }
-      return nextState;
+        return nextState;
+      case REMOVE_TODO:
+          delete nextState[action.todo.id];
+          return nextState;
     default:
       return state;
   }
 };
+
 
 export default todosReducer;
 
