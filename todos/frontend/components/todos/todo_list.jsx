@@ -1,3 +1,16 @@
 
+import React from 'react';
 
-export default () => <h3>Todo List goes here!</h3>;
+
+const TodoList = (props) => { //props hold todos
+    return (
+        <ul>
+            {
+              props.todos.map(todo => <li key={todo.id}>{todo.title}</li>)  
+            }
+        </ul>
+
+    )
+
+}
+export default TodoList;
