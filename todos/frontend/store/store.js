@@ -33,5 +33,5 @@ const pls = {
 };
 
 export const configureStore = (preloadedState = pls) => {
-    return createStore(rootReducer, preloadedState);
+    return createStore(rootReducer, preloadedState); 
 }
