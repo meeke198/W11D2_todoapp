@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.receiveSteps = receiveSteps;
     window.receiveStep = receiveStep;
-    window.removeStep = removeStep; 
+    window.removeStep = removeStep;
 
     window.allTodos = allTodos;
     

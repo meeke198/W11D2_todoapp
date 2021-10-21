@@ -5,7 +5,7 @@ import TodoList from './todo_list';
 
 
 const mapStateToProps = state => ({
-    todos: allTodos(state)      //todos: prop
+  todos: allTodos(state)      //todos: prop
 })
 
 const mapDispatchToProps = (dispatch) => ({
